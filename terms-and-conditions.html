@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="ConPila, términos y condiciones, terms and conditions, comunidad, red social, tecnología, desarrollo de software, programación">
+  <meta name="description" content="Lee los términos y condiciones de ConPila, la red social para entusiastas de la tecnología. Comprende las reglas y políticas de uso.">
+
+  <link rel="icon" href="images/iconoconpila.ico" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    (function() {
+      document.documentElement.classList.add('no-transition');
+      var t = localStorage.getItem('theme') || localStorage.getItem('conpila_theme');
+      if (t === 'light') document.documentElement.classList.add('light');
+    })();
+  </script>
+  <title>Términos y Condiciones - ConPila | Red social para entusiastas de la tecnología</title>
+</head>
+
+<body class="own-container">
+
+  <header class="header" id="terms-and-conditions-header">
+    <div class="header-logo logo">
+      <a href="home.html">
+        <img class="header-logo-img" src="images/logo_horizontal.png" alt="Logo ConPila con rayo verde" />
+      </a>
+    </div>
+  </header>
+
+  <main class="container-components" style="max-width: 800px; margin-top: 7rem;">
+    <div class="text-center mb-3">
+      <h1 class="terms-and-conditios-title" style="color: var(--cp-green); font-size: 2.2rem;">TÉRMINOS Y CONDICIONES</h1>
+    </div>
+
+    <div class="terms-and-conditions-card">
+      <p class="terms-and-conditios-text">
+        ¡Te damos la bienvenida a ConPila! Al acceder y utilizar nuestra red social, aceptas cumplir con los presentes
+        Términos y Condiciones de Uso. Si no estás de acuerdo con alguna parte de estos términos, te recomendamos no
+        utilizar la plataforma. ConPila es un espacio de código abierto diseñado para que los amantes y entusiastas de
+        la tecnología compartan conocimientos, publiquen contenido, colaboren y conecten con otros miembros del mundo
+        digital.<br><br>
+
+        <strong>1. NATURALEZA DEL SITIO Y LICENCIA MIT:</strong> La base de código de este sitio web está distribuida de
+        manera pública y abierta bajo la Licencia MIT. Esto significa que eres completamente libre de ver, estudiar,
+        modificar y redistribuir el código fuente bajo los términos de dicha licencia, la cual incluye una exención
+        total de responsabilidad legal por el funcionamiento, rendimiento o posibles fallos del software.<br><br>
+
+        <strong>2. ELEGIBILIDAD Y SIN RESTRICCIÓN DE EDAD:</strong> En ConPila creemos firmemente en la democratización
+        del aprendizaje tecnológico y el acceso a las herramientas de programación, por lo cual no existe ninguna
+        restricción de edad mínima para crear una cuenta, navegar o interactuar con la comunidad. No obstante, si eres
+        menor de edad en tu jurisdicción, asumimos que cuentas con el consentimiento explícito de tus padres o tutores
+        legales para navegar en internet y compartir contenido en este espacio público.<br><br>
+
+        <strong>3. REGLAS DE LA COMUNIDAD Y CONTENIDO:</strong> Como usuario, eres el único y absoluto responsable de la
+        información, fragmentos de código, imágenes, enlaces o comentarios que publiques en tu muro o en las
+        publicaciones de terceros. Al participar en la red, te comprometes a mantener un ambiente seguro, colaborativo y
+        respetuoso, quedando estrictamente prohibido publicar contenido ofensivo, discriminatorio, difamatorio o que
+        incite al odio, así como compartir malware o scripts maliciosos.<br><br>
+
+        <strong>4. LIMITACIÓN DE RESPONSABILIDAD:</strong> La plataforma se proporciona "tal cual" y "según
+        disponibilidad", sin garantías de ningún tipo, por lo que ConPila no se hace responsable de las opiniones
+        vertidas por los usuarios ni de la pérdida de datos derivada del uso de la aplicación.<br><br>
+
+        <strong>5. MODIFICACIONES DE LOS TÉRMINOS:</strong> Nos reservamos el derecho de actualizar estos términos en
+        cualquier momento para adaptarnos a nuevas funcionalidades del software o normativas legales.
+      </p>
+    </div>
+
+    <form class="register-terms-form text-center mt-3" id="termsForm">
+      <div class="terms-acceptance justify-content-center">
+        <input type="checkbox" id="terms" name="terms" required style="width: 18px; height: 18px; accent-color: var(--cp-green);" />
+        <label for="terms" style="cursor: pointer; font-weight: 500;">He leído y acepto los términos y condiciones de ConPila</label>
+      </div>
+
+      <div class="terms-button mt-3">
+        <button type="submit" class="button-submit" style="max-width: 240px; margin: 0 auto;">
+          CONTINUAR
+        </button>
+      </div>
+    </form>
+
+    <footer class="credit-developer mt-5 text-center">
+      <p style="color: var(--cp-grey);">Desarrollado con dedicación por:</p>
+      <img class="developer-logo mx-auto mt-2" src="images/logo_cincodecopas.png" alt="Logo Cinco de Copas" style="max-width: 140px;" />
+    </footer>
+  </main>
+
+  <script src="js/mode.js"></script>
+  <script type="module">
+    import { showToast } from './js/utils/domUtils.js';
+
+    const token = localStorage.getItem('token');
+    const isAuthenticated = Boolean(token && token !== 'undefined');
+    const termsCheck = document.getElementById('terms');
+    termsCheck.required = !isAuthenticated;
+
+    document.getElementById('termsForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (isAuthenticated) {
+        window.location.href = 'home.html';
+        return;
+      }
+
+      if (!termsCheck?.checked) {
+        showToast('Debes marcar la casilla para aceptar los términos y condiciones.', 'warning');
+        return;
+      }
+      localStorage.setItem('conpila_terms_accepted', 'true');
+      showToast('Términos y condiciones aceptados correctamente.', 'success');
+      setTimeout(() => {
+        window.location.href = 'register.html';
+      }, 600);
+    });
+  </script>
+</body>
+
+</html>

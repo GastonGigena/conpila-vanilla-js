@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="ConPila, index, logueo, comunidad, red social, tecnología, desarrollo de software, programación">
+    <meta name="description" content="Únete a ConPila, la red social para entusiastas de la tecnología. 
+      Descubre contenido relevante y conecta con otros profesionales.">
+
+    <link rel="icon" href="images/iconoconpila.ico" type="image/x-icon" />
+    
+    <title>Logueo - ConPila | Red social para entusiastas de la tecnología</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+      (function() {
+        document.documentElement.classList.add('no-transition');
+        var t = localStorage.getItem('theme') || localStorage.getItem('conpila_theme');
+        if (t === 'light') document.documentElement.classList.add('light');
+      })();
+    </script>
+</head>
+<body>
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="images/logo_vertical.png" alt="logo conpila. Una pila con rayito verde en su interior y un circulo animado que indica cargando sitio" class="splash-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <main id="login-screen">
+        <section class="logo">
+            <img src="images/logo_vertical.png" alt="logo conpila. Una pila con rayito verde en su interior con efecto en el fondo al pasar el mouse" class="login-logo">
+        </section>
+        
+        <section class="login">
+            <div class="welcome-text">
+                <p>Bienvenido</p>
+            </div>
+            
+            <form id="loginForm" action="home.html" method="POST">
+                <div class="input-group input-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" name="identifier" autocomplete="username" placeholder="Correo o nombre de usuario" required>
+                </div>
+                
+                <div class="input-group conpila_password-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <i class="fa-regular fa-eye conpila_password-icon"></i>
+                </div>
+                
+                <div class="button-container">
+                    <button class="button-submit" type="submit">INICIA SESIÓN</button>
+                </div>
+            </form>
+            
+            <div class="register-link">
+                <p>¿No tienes cuenta?</p>
+                <a class="button-submit" href="register.html">REGÍSTRATE</a>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/splash_index.js"></script>
+    <script src="js/mode.js"></script>
+</body>
+</html>

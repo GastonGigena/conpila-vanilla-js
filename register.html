@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="keywords" content="ConPila, registro usuario, register, comunidad, red social, tecnología, desarrollo de software, programación">
+    <meta name="description" content="Regístrate en ConPila y únete a la comunidad tecnológica más activa.
+     Comparte conocimientos, publica contenido y conecta con otros entusiastas del mundo digital.">
+
+    <link rel="icon" href="images/iconoconpila.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script>
+      (function() {
+        document.documentElement.classList.add('no-transition');
+        var t = localStorage.getItem('theme') || localStorage.getItem('conpila_theme');
+        if (t === 'light') document.documentElement.classList.add('light');
+      })();
+    </script>
+    <title>Regístro - ConPila | Únete a la comunidad tecnológica</title>
+  </head>
+
+  <body class="own-container register-body">
+    <header class="mobile logo">
+      <img src="images/logo_horizontal.png" alt="logo conpila con rayo de color verde" />
+      <p>Únete a la red de conocimiento</p>
+    </header>
+
+    <section class="desktop-logo logo">
+      <img src="images/logo_vertical.png" alt="logo conpila. Una pila con rayito verde en su interior con efecto en el fondo al pasar el mouse" />
+    </section>
+
+    <main>
+      <section class="register">
+        <div class="user-avatar-default-container" id="reg-avatar-trigger" style="cursor: pointer;" title="Haz clic para subir tu foto de perfil">
+          <img
+            id="reg-avatar-preview"
+            src="images/user-solid.png"
+            class="profile-avatar user-avatar-default"
+            alt="avatar de usuario por defecto"
+          />
+          <i class="fa-solid fa-pencil user-avatar-pencil"></i>
+          <input type="file" id="reg-avatar-file" accept="image/*" style="display: none;" />
+        </div>
+
+        <form id="loginForm" action="home.html" method="post">
+          <input
+            class="input-group register-input-text-color"
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            required
+          />
+
+          <input
+            class="input-group register-input-text-color"
+            type="text"
+            name="lastname"
+            placeholder="Apellido"
+            required
+          />
+
+          <input
+            class="input-group register-input-text-color"
+            type="text"
+            name="username"
+            placeholder="Nombre de usuario"
+            required
+          />
+
+          <input
+            class="input-group register-input-text-color"
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+          />
+
+          <div class="input-group conpila_password-container">
+            <input type="password" name="password" placeholder="Contraseña" required />
+            <i class="fa-solid fa-eye conpila_password-icon"></i>
+          </div>
+
+          <div class="input-group conpila_password-container">
+            <input type="password" name="confirm_password" placeholder="Confirmar contraseña" required />
+            <i class="fa-solid fa-eye conpila_password-icon"></i>
+          </div>
+
+          <div class="terms-and-conditions-button-group">
+            <a
+              class="button-submit terms-and-conditions-button"
+              href="terms-and-conditions.html"
+            >
+              Leer términos y condiciones 
+            </a>
+
+            <button type="submit" class="button-submit terms-and-conditions-button">
+              REGÍSTRATE
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="js/registerPresentation.js"></script>
+    <script src="js/mode.js"></script>
+  </body>
+</html>
